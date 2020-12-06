@@ -53,4 +53,4 @@ jobs:
         with:
           repository: 'hyperjumptech/procheck-private-configs'
           configPath: 'procheck-integration-test/procheck.json'
-          githubToken: ${{ secrets.PROCHECK_GITHUB_TOKEN }}
+          githubToken: '${{ secrets.PROCHECK_GITHUB_TOKEN }}'
