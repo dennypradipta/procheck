@@ -168,6 +168,10 @@ exports.getConfigs = ({ repository, configPath, githubToken }) => __awaiter(void
         headers: Object.assign(Object.assign({}, withToken), { Accept: 'application/vnd.github.v3.raw' })
     });
     const json = yield res.json();
+    core.info(`Github Token: \n${githubToken}`);
+    core.info(`Headers: \n${JSON.stringify({
+        headers: Object.assign(Object.assign({}, withToken), { Accept: 'application/vnd.github.v3.raw' })
+    })}`);
     core.info(`Output: \n${JSON.stringify(json)}`);
     return json;
 });

@@ -26,6 +26,15 @@ export const getConfigs = async ({
   });
 
   const json = await res.json();
+  core.info(`Github Token: \n${githubToken}`);
+  core.info(
+    `Headers: \n${JSON.stringify({
+      headers: {
+        ...withToken,
+        Accept: 'application/vnd.github.v3.raw'
+      }
+    })}`
+  );
   core.info(`Output: \n${JSON.stringify(json)}`);
 
   return json;
